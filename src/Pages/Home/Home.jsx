@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import VolunteerOpportunityCard from "./VolunteerOpportunityCard";
 import Gallery from "./Gallery";
+import Extra from "./extra";
 
 // import Slider from '../Home/Slider'
 const Home = () => {
@@ -39,6 +40,10 @@ const Home = () => {
       </div>
       <div className="mt-10">
         <Gallery></Gallery>
+
+      </div>
+      <div className="mt-10">
+        <Extra></Extra>
 
       </div>
     </div>
