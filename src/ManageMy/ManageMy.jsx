@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Delete from "./Delete";
+import NeedVolunteer from "../Pages/NeedVolunteer/NeedVolunteer";
 
 const ManageMy = () => {
   const mySpot = useLoaderData();
@@ -28,6 +29,9 @@ const ManageMy = () => {
               </tbody>
           </table>
         </div>
+      </div>
+      <div className="mt-28">
+        <NeedVolunteer></NeedVolunteer>
       </div>
     </div>
   );
