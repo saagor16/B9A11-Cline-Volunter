@@ -14,19 +14,18 @@ const ManageMy = () => {
               <tr>
                 <th>No.</th>
                 <th>Title</th>
-                <th>Spot Name</th>
+                <th>category</th>
+                <th>location</th>
                 <th>Date</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
                 {mySpot.map((spot, index) => (
                   <Delete key={spot._id} spot={spot} index={index} />
                 ))}
-              </tr>
-            </tbody>
+              </tbody>
           </table>
         </div>
       </div>

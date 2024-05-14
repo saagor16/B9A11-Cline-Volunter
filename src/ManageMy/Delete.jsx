@@ -22,7 +22,7 @@ const Delete = ({ spot, index }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/volunteer/${_id}`, {
+        fetch(`http://localhost:9000/volunteer/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -39,28 +39,27 @@ const Delete = ({ spot, index }) => {
     });
   };
   return (
-    <div>
-   
-        
-          <td>{index + 1}</td>
-          <td>{spot.title}</td>
-          <td>{spot.spotName}</td>
-          <td>{spot.date}</td>
-          <td className="text-xl">
-            <Link to={`/updateVolunteer/${spot._id}`}>
-              <button className="btn">
-                <FaEdit className="text-xl"></FaEdit>
-              </button>
-            </Link>
-          </td>
-          <td>
-            <button onClick={() => handleDelete(spot._id)} className="btn">
-              <MdDeleteSweep className="text-xl text-red-400"></MdDeleteSweep>
+
+      <tr>
+        <td>{index + 1}</td>
+        <td>{spot.title}</td>
+        <td>{spot.category}</td>
+        <td>{spot.location}</td>
+        <td>{spot.date}</td>
+        <td className="text-xl">
+          <Link to={`/updateVolunteer/${spot._id}`}>
+            <button className="btn">
+              <FaEdit className="text-xl"></FaEdit>
             </button>
-          </td>
-       
-   
-    </div>
+          </Link>
+        </td>
+        <td>
+          <button onClick={() => handleDelete(spot._id)} className="btn">
+            <MdDeleteSweep className="text-xl text-red-400"></MdDeleteSweep>
+          </button>
+        </td>
+      </tr>
+
   );
 };
 
