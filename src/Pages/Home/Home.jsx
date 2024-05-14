@@ -4,6 +4,7 @@ import VolunteerOpportunityCard from "./VolunteerOpportunityCard";
 import Gallery from "./Gallery";
 import Extra from "./extra";
 import ExtraOne from "./ExtraOne";
+import ExtraTwo from "./ExtraTwo";
 
 // import Slider from '../Home/Slider'
 const Home = () => {
@@ -49,6 +50,10 @@ const Home = () => {
       </div>
       <div className="mt-10">
         <ExtraOne></ExtraOne>
+
+      </div>
+      <div className="mt-10">
+        <ExtraTwo></ExtraTwo>
 
       </div>
     </div>
