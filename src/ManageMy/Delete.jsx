@@ -10,6 +10,7 @@ const Delete = ({ spot, index }) => {
   const { user } = useContext(AuthContext);
   console.log(user);
 
+  
   const handleDelete = (_id) => {
     console.log(_id);
     Swal.fire({
@@ -38,6 +39,11 @@ const Delete = ({ spot, index }) => {
       }
     });
   };
+ 
+
+  if (!spot || spot.length === 0) {
+    return <div>No volunteer posts found.</div>; // Display message if no data is available
+  }
   return (
 
       <tr>
