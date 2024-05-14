@@ -50,5 +50,4 @@ const VolunteerPage = () => {
     </div>
   );
 };
-
 export default VolunteerPage;
