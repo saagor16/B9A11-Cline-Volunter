@@ -4,16 +4,26 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdatePage = () => {
   const { id } = useParams();
-  console.log(id);
   const { user } = useContext(AuthContext);
   const [post, setPost] = useState({
     deadline: new Date(),
     userEmail: user ? user.email : "",
     userName: user ? user.displayName : "",
   });
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:9000/volunteer/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        console.log(data);
+      });
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,17 +33,6 @@ const UpdatePage = () => {
   const handleDeadlineChange = (date) => {
     setPost({ ...post, deadline: date });
   };
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    fetch(`http://localhost:9000/volunteer`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data);
-        console.log(data);
-      });
-  }, [id]);
-  console.log(product);
-
 
   const handleUpdate = (event) => {
     event.preventDefault();
@@ -53,16 +52,20 @@ const UpdatePage = () => {
     fetch(`http://localhost:9000/updateVolunteer/${id}`, {
       method: "PUT",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(volunteerInfo),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) console.log("update successful");
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Update successful",
+          });
+        }
       });
-
-    console.log(title, description, date, thumbnail);
   };
 
   return (
@@ -89,6 +92,7 @@ const UpdatePage = () => {
           <input
             type="text"
             id="title"
+            defaultValue={product.title}
             name="title"
             onChange={handleChange}
             className="w-full px-3 py-2 border rounded-lg"
@@ -101,6 +105,7 @@ const UpdatePage = () => {
           <textarea
             id="description"
             name="description"
+            defaultValue={product.description}
             onChange={handleChange}
             rows="4"
             className="w-full px-3 py-2 border rounded-lg"
@@ -114,6 +119,7 @@ const UpdatePage = () => {
             type="text"
             id="category"
             name="category"
+            defaultValue={product.category}
             onChange={handleChange}
             className="w-full px-3 py-2 border rounded-lg"
           />
@@ -125,6 +131,7 @@ const UpdatePage = () => {
           <input
             type="text"
             id="location"
+            defaultValue={product.location}
             name="location"
             onChange={handleChange}
             className="w-full px-3 py-2 border rounded-lg"
@@ -140,6 +147,7 @@ const UpdatePage = () => {
           <input
             type="number"
             id="volunteersNeeded"
+            defaultValue={product.volunteersNeeded}
             name="volunteersNeeded"
             onChange={handleChange}
             className="w-full px-3 py-2 border rounded-lg"
@@ -151,6 +159,7 @@ const UpdatePage = () => {
           </label>
           <DatePicker
             name="date"
+            defaultValue={product.date}
             selected={post.deadline}
             onChange={handleDeadlineChange}
             className="w-full px-3 py-2 border rounded-lg"
@@ -180,7 +189,7 @@ const UpdatePage = () => {
             type="submit"
             className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full"
           >
-            UpdatePage
+            Update Post
           </button>
         </div>
       </form>
