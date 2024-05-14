@@ -12,7 +12,6 @@ const Delete = ({ spot, index }) => {
 
   
   const handleDelete = (_id) => {
-    console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -23,7 +22,7 @@ const Delete = ({ spot, index }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:9000/volunteer/${_id}`, {
+        fetch(`https://a11b9-volunteer.vercel.app/volunteer/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

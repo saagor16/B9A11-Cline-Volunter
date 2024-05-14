@@ -46,9 +46,8 @@ const AddVolunteerPost = () => {
       userEmail,
       userName,
     };
-    console.log(newVolunteer)
 
-    fetch("http://localhost:9000/volunteer", {
+    fetch("https://a11b9-volunteer.vercel.app/volunteer", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -57,7 +56,6 @@ const AddVolunteerPost = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",

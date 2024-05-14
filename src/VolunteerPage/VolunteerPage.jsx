@@ -11,7 +11,7 @@ const VolunteerPage = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:9000/volunteer/search?q=${searchQuery}`
+        `https://a11b9-volunteer.vercel.app/volunteer/search?q=${searchQuery}`
       );
       setSearchResults(response.data);
     } catch (error) {

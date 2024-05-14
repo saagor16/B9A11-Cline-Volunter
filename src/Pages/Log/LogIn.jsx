@@ -15,7 +15,6 @@ const LogIn = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
 
     try {
       const result = await LogIn(email, password);

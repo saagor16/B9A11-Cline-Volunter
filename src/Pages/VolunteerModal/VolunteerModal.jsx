@@ -9,11 +9,10 @@ const VolunteerModal = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:9000/volunteer/${id}`)
+    fetch(`https://a11b9-volunteer.vercel.app/volunteer/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        console.log(data);
       });
   }, [id]);
 

@@ -17,11 +17,10 @@ const UpdatePage = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:9000/volunteer/${id}`)
+    fetch(`https://a11b9-volunteer.vercel.app/volunteer/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        console.log(data);
       });
   }, [id]);
 
@@ -49,7 +48,7 @@ const UpdatePage = () => {
       thumbnail,
     };
 
-    fetch(`http://localhost:9000/updateVolunteer/${id}`, {
+    fetch(`https://a11b9-volunteer.vercel.app/updateVolunteer/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

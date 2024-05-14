@@ -2,20 +2,7 @@ const Banner = () => {
   return (
     <div className="mt-20">
       <div className="carousel w-full h-[720px]">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img
-            src="https://thumbs.dreamstime.com/b/diverse-hands-holding-word-volunteer-41013777.jpg"
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
+
         <div id="slide2" className="carousel-item relative w-full">
           <img
             src="https://media.istockphoto.com/id/668214842/photo/voluteer-group-of-people-for-charity-donation-in-the-park.jpg?s=612x612&w=0&k=20&c=uWklZNqevBrOnO-aaMurM0JTE8mAcCp-kWAKG0bBcsI="
@@ -53,7 +40,7 @@ const Banner = () => {
             <a href="#slide3" className="btn btn-circle">
               ❮
             </a>
-            <a href="#slide1" className="btn btn-circle">
+            <a href="#slide2" className="btn btn-circle">
               ❯
             </a>
           </div>

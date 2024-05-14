@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:9000/volunteer'),
+        loader:()=>fetch('https://a11b9-volunteer.vercel.app/volunteer'),
       },
       {
         path: "/contact",
@@ -47,17 +47,17 @@ const router = createBrowserRouter([
       {
         path: "/needVolunteer",
         element:<PrivateRoute><NeedVolunteer></NeedVolunteer></PrivateRoute>,
-        loader:()=>fetch('http://localhost:9000/volunteer')
+        loader:()=>fetch('https://a11b9-volunteer.vercel.app/volunteer')
       },
       {
         path: "/manageMy",
         element:<PrivateRoute><ManageMy></ManageMy></PrivateRoute>,
-        loader:()=>fetch('http://localhost:9000/volunteer')
+        loader:()=>fetch('https://a11b9-volunteer.vercel.app/volunteer')
       },
       {
         path: "/needVolunteerPerson",
         element:<VolunteerPage></VolunteerPage>,
-        loader:()=>fetch('http://localhost:9000/volunteer')
+        loader:()=>fetch('https://a11b9-volunteer.vercel.app/volunteer')
        
       },
       {
