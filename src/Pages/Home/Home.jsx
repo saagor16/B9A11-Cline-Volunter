@@ -2,9 +2,10 @@ import { Link, useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import VolunteerOpportunityCard from "./VolunteerOpportunityCard";
 import Gallery from "./Gallery";
-import Extra from "./extra";
+
 import ExtraOne from "./ExtraOne";
 import ExtraTwo from "./ExtraTwo";
+import MyHome from "./MyHome";
 
 // import Slider from '../Home/Slider'
 const Home = () => {
@@ -45,7 +46,7 @@ const Home = () => {
 
       </div>
       <div className="mt-10">
-        <Extra></Extra>
+          <MyHome></MyHome>
 
       </div>
       <div className="mt-10">

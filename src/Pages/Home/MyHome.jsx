@@ -1,7 +1,8 @@
-const Extra = () => {
-  return (
-    <div>
-      <section className="p-6 dark:bg-gray-100 dark:text-gray-800">
+
+const MyHome = () => {
+    return (
+        <div>
+             <section className="p-6 dark:bg-gray-100 dark:text-gray-800">
         <div className="container p-4 mx-auto text-center">
           <h2 className="text-4xl font-bold">
             Trusted by the industry leaders
@@ -82,8 +83,8 @@ const Extra = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default Extra;
+export default MyHome;
