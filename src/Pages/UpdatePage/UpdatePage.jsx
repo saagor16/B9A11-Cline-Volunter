@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
+/* eslint-disable no-undef */
+import { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../providers/AuthProvider";
-import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
-
 
 const UpdatePage = () => {
   const { id } = useParams();
@@ -12,7 +11,7 @@ const UpdatePage = () => {
   const { user } = useContext(AuthContext);
   const [post, setPost] = useState({
     deadline: new Date(),
-    userEmail: user ? user.email : "", 
+    userEmail: user ? user.email : "",
     userName: user ? user.displayName : "",
   });
 
@@ -24,63 +23,59 @@ const UpdatePage = () => {
   const handleDeadlineChange = (date) => {
     setPost({ ...post, deadline: date });
   };
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    fetch(`http://localhost:9000/volunteer`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        console.log(data);
+      });
+  }, [id]);
+  console.log(product);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const thumbnail = form.thumbnail.value;
+
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const form = event.target;
     const title = form.title.value;
     const description = form.description.value;
-    const category = form.category.value;
-    const location = form.location.value;
-    const volunteersNeeded = form.volunteersNeeded.value;
     const date = form.date.value;
-    const userEmail = user.email;
-    const userName = user.displayName;
+    const thumbnail = form.thumbnail.value;
 
-    const addItems = {
-     
-      thumbnail,
+    const volunteerInfo = {
       title,
       description,
-      category,
-      location,
-      volunteersNeeded,
       date,
-      userEmail,
-      userName,
+      thumbnail,
     };
-    console.log(addItems);
-    fetch(`http://localhost:9000/update/${id}`, {
+
+    fetch(`http://localhost:9000/updateVolunteer/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(addItems),
+      body: JSON.stringify(volunteerInfo),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        Swal.fire({
-          title: "Success!",
-          text: "Card Updated Successfully",
-          icon: "success",
-          confirmButtonText: "Cool",
-        });
+        if (data.modifiedCount > 0) console.log("update successful");
       });
-    
+
+    console.log(title, description, date, thumbnail);
   };
 
   return (
     <div className="mx-auto max-w-lg p-6 border rounded-lg bg-gray-100 mt-20">
       <h2 className="text-xl font-semibold mb-4">Update Volunteer Post</h2>
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+      <form onSubmit={handleUpdate} className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="thumbnail" className="block font-semibold mb-1">
             Thumbnail
           </label>
           <input
             type="text"
+            defaultValue={product.thumbnail}
             id="thumbnail"
             name="thumbnail"
             onChange={handleChange}
@@ -155,8 +150,8 @@ const UpdatePage = () => {
             Deadline
           </label>
           <DatePicker
-          name="date"
-          selected={post.deadline}
+            name="date"
+            selected={post.deadline}
             onChange={handleDeadlineChange}
             className="w-full px-3 py-2 border rounded-lg"
           />
@@ -171,7 +166,7 @@ const UpdatePage = () => {
           />
         </div>
         <div>
-        <label className="block font-semibold mb-1">Organizer Email</label>
+          <label className="block font-semibold mb-1">Organizer Email</label>
           <input
             type="email"
             value={post.userEmail}
@@ -179,9 +174,7 @@ const UpdatePage = () => {
             readOnly
           />
         </div>
-        <div className="grid grid-cols-2">
-         
-        </div>
+        <div className="grid grid-cols-2"></div>
         <div className="col-span-2">
           <button
             type="submit"

@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div className="mt-20">
-      <div className="carousel w-full">
+      <div className="carousel w-full h-[720px]">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://thumbs.dreamstime.com/b/diverse-hands-holding-word-volunteer-41013777.jpg"
@@ -18,7 +18,7 @@ const Banner = () => {
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+            src="https://media.istockphoto.com/id/668214842/photo/voluteer-group-of-people-for-charity-donation-in-the-park.jpg?s=612x612&w=0&k=20&c=uWklZNqevBrOnO-aaMurM0JTE8mAcCp-kWAKG0bBcsI="
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -32,7 +32,7 @@ const Banner = () => {
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dm9sdW50ZWVyfGVufDB8fDB8fHww"
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -46,7 +46,7 @@ const Banner = () => {
         </div>
         <div id="slide4" className="carousel-item relative w-full">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+            src="https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHZvbHVudGVlcnxlbnwwfHwwfHx8MA%3D%3D"
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

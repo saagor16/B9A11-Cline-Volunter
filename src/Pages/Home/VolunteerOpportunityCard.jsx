@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const VolunteerOpportunityCard = ({artData}) => {
   const {
+    _id,
     thumbnail,
     title,
     category,
@@ -25,7 +26,7 @@ const VolunteerOpportunityCard = ({artData}) => {
             <p>Category: <span>{category}</span></p>
             <p>Deadline <span>{date}</span></p>
           </div>
-          <div className="card-actions"><Link to='/needVolunteer'><button  className="btn btn-primary">View Details Button</button></Link>
+          <div className="card-actions"><Link to={`/single/${_id}`}><button  className="btn btn-primary">View Details Button</button></Link>
             
           </div>
         </div>

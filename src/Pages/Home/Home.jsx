@@ -4,28 +4,36 @@ import VolunteerOpportunityCard from "./VolunteerOpportunityCard";
 
 // import Slider from '../Home/Slider'
 const Home = () => {
-    const short = useLoaderData();
-    const shortSlice = short.slice(0, 6);
+  const short = useLoaderData();
+  const shortSlice = short.slice(0, 6);
   return (
     <div className="mt-16">
       <div>
         <Banner></Banner>
       </div>
-    
-      <div>
-        <h2> Volunteer Needs Now Section</h2>
-        
+
+      <div className="text-center mt-10">
+        <h2 className="text-3xl font-bold"> Volunteer Needs Now </h2>
+        <p>
+          {" "}
+          It serves as a vital resource, swiftly mobilizing individuals to
+          address pressing community <br /> needs. Through concise listings and clear
+          directives, it facilitates quick engagement, maximizing volunteer
+          impact.
+        </p>
       </div>
       <div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-10">
-        {shortSlice.map((art) => (
-          <VolunteerOpportunityCard key={art._id} artData={art} />
-        ))}
-      </div>
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-10">
+          {shortSlice.map((art) => (
+            <VolunteerOpportunityCard key={art._id} artData={art} />
+          ))}
+        </div>
       </div>
       <div className="items-center mt-5 text-center">
-        <Link to='/needVolunteer'>
-        <button className="btn btn-primary w-32 hover:btn-accent">See All</button>
+        <Link to="/needVolunteer">
+          <button className="btn btn-primary w-32 hover:btn-accent">
+            See All
+          </button>
         </Link>
       </div>
     </div>

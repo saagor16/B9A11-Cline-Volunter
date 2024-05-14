@@ -42,7 +42,7 @@ const NeedVolunteer = () => {
             </thead>
             <tbody className="bg-gray-400 text-black">
             {myVolunteer.map((item, index) => (
-              <tr key={item.id} className="border-b">
+              <tr key={item._id} className="border-b">
                 <td className="px-4 py-2">{index + 1}</td>
                 <td className="px-6 py-2">{item.title}</td>
                 <td className="px-12 py-2">{item.category}</td>
@@ -51,7 +51,7 @@ const NeedVolunteer = () => {
                 <td className="px-4 py-2">{item.date}</td>
                 <td className="px-4 py-2 text-center">
                   <Link
-                    to={`/single/${item._id}`}
+                      
                     
                     
                     className="text-blue-800 hover:text-blue-700 transition duration-300"

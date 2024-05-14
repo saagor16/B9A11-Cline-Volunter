@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element:<PrivateRoute><AddVolunteer></AddVolunteer></PrivateRoute>,
       },
       {
-        path: "/volunteer/:id",
+        path: "/updateVolunteer/:id",
         element:<PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
       },
       {
