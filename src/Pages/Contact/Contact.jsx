@@ -2,7 +2,7 @@ import PageTitle from "../../PageTitle/PageTitle";
 
 const Contact = () => {
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto mt-20">
       <PageTitle title="Contact"></PageTitle>
       <section className="py-6 dark:bg-gray-500 dark:text-gray-900">
         <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
