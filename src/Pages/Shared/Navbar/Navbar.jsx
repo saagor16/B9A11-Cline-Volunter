@@ -110,8 +110,8 @@ const Navbar = () => {
               </ul>
             )}
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">
-            daisyUI
+          <Link to="/" className="btn btn-ghost lg:text-xl">
+          Happy Volunteer
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
