@@ -9,24 +9,18 @@
 
 ## Description
 
-This project is a volunteer management website built using various npm packages to enhance functionality and user experience. The site utilizes **Tailwind CSS** for responsive design, and **Daisy UI** to provide pre-styled components. **React Helmet** is used for managing document head, while **React Toast** provides notification features.
-
-For UI animations, **React Awesome Reveal** is incorporated. **React-simple-typewriter** adds typing animation effects to text elements, creating a dynamic user interface. The backend is powered by **MongoDB Atlas**, ensuring efficient data management and storage. Additionally, **Mamba UI** components are used to further enhance the visual appeal.
-
-The website allows users to register, log in, and log out seamlessly. Volunteers can be added easily, ensuring an efficient way to manage volunteer needs and activities. This comprehensive use of modern technologies and packages ensures a robust and user-friendly experience for managing volunteer activities.
+This project is a volunteer management website designed to streamline volunteer activities using modern web technologies. It features a responsive design implemented with **Tailwind CSS** and pre-styled components from **Daisy UI**. **React Helmet** manages document head settings, while **React Toast** handles notifications. The site supports user authentication for seamless login and logout experiences, alongside robust volunteer management functionalities.
 
 ## Features
 
-- Responsive design using Tailwind CSS
-- Pre-styled components with Daisy UI
-- Document head management with React Helmet
-- Notifications using React Toast
-- Typing animations with React-simple-typewriter
-- UI animations with React Awesome Reveal
-- Data management with MongoDB Atlas
-- Enhanced UI with Mamba UI components
-- User authentication (login, logout)
-- Volunteer management
+- Responsive design with Tailwind CSS and pre-styled components from Daisy UI
+- Document head management using React Helmet
+- Notifications powered by React Toast
+- Typing animations provided by React-simple-typewriter
+- UI animations enhanced with React Awesome Reveal
+- Data management and storage facilitated by MongoDB Atlas
+- User authentication functionalities (login, logout)
+- Comprehensive volunteer management capabilities
 
 ## npm Packages Used
 
@@ -39,4 +33,39 @@ The website allows users to register, log in, and log out seamlessly. Volunteers
 - [React-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
 - [React Awesome Reveal](https://www.npmjs.com/package/react-awesome-reveal)
 
+## Installation
 
+1. Clone the server repository:
+    ```bash
+    git clone https://github.com/saagor16/B9A11-Server-Volunter.git
+    ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd B9A11-Server-Volunter
+    ```
+
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+4. Create a `.env` file in the root directory and add:
+    ```env
+    PORT=5000
+    MONGODB_URI=your_mongodb_atlas_uri
+    JWT_SECRET=your_jwt_secret
+    ```
+
+5. Start the server:
+    ```bash
+    npm start
+    ```
+
+## Contributing
+
+Contributions are welcome! Fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License.
