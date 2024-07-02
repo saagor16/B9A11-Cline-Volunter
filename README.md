@@ -2,6 +2,11 @@
 
 **Live Site URL:** [Volunteer](https://b9a11-volun.web.app)
 
+## Repository Links
+
+- [Client Repository](https://github.com/saagor16/B9A11-Cline-Volunter)
+- [Server Repository](https://github.com/saagor16/B9A11-Server-Volunter)
+
 ## Description
 
 This project is a volunteer management website built using various npm packages to enhance functionality and user experience. The site utilizes **Tailwind CSS** for responsive design, and **Daisy UI** to provide pre-styled components. **React Helmet** is used for managing document head, while **React Toast** provides notification features.
@@ -34,32 +39,4 @@ The website allows users to register, log in, and log out seamlessly. Volunteers
 - [React-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
 - [React Awesome Reveal](https://www.npmjs.com/package/react-awesome-reveal)
 
-## Installation
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/saagor16/volunteer-website.git
-    ```
-
-2. Navigate to the project directory:
-    ```bash
-    cd volunteer-website
-    ```
-
-3. Install the dependencies:
-    ```bash
-    npm install
-    ```
-
-4. Start the development server:
-    ```bash
-    npm start
-    ```
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License.
